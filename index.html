@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <link rel="shortcut icon" href="./imge/statistics-vector-icon-png_253312-removebg-preview.png" type="image/x-icon">
+    <title>Measures Of Dispersion</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="command-container">
+            <div class="form">
+                <p><span>Note:</span> Input the data separated by spaces.</p>
+                <input type="text" name="val8e" id="data" oninput="show_data()" placeholder="Input data hear">
+            </div>
+    
+            <div class="button-containers">
+                <button id="range">Range</button>
+                <button id="IQR">Inter Quartile Range</button>
+                <button id="Pop_Variance">Variance</button>
+                <button id="Samp_Variance">Sample Variance</button>
+                <button id="PSD">Standard Deviation</button>
+                <button id="SSD">Sample Standard Deviation</button>
+                <button id="Coe_Variance">Coefficient of Variance</button>
+                <button id="clear">Clear Data</button>
+            </div>
+
+            <div class="reminder-container">
+                <h2>Reminder: </h2>
+                <ul>
+                    <li>Error may encounter if there's too much spaces between input data.</li>
+                    <li>Use space to separate data, other special are charaters are not allowed.</li>
+                    <li>Having extra space may lead to inaccurate result.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="res-container">
+            <div class="title-container">
+                <h1>
+                    Measures of Dispersion
+                </h1>
+            </div>
+
+            <div class="result-container">
+                <h3 id="data-container"></h3>
+                <h2 id="result"></h2>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="calculation.js"></script>
+</body>
+</html>

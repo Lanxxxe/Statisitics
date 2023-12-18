@@ -28,8 +28,8 @@ h1 {
     color: #25e4ee;
     font-family: "Sacramento", cursive;
     text-align: center;
-    animation: blink 12s infinite;
-    -webkit-animation: blink 12s infinite;
+    animation: blink 7s infinite;
+    -webkit-animation: blink 7s infinite;
   }
   
   @-webkit-keyframes blink {
@@ -39,7 +39,6 @@ h1 {
       color: #111;
       text-shadow: none;
     }
-  
     0%,
     19%,
     21%,
@@ -144,11 +143,9 @@ input::placeholder {
 .result-container {
     width: 510px;
     margin-top: 30px;
-    /* border: 2px solid red; */
 }
 .result-container h3{
     padding: 10px;
-    /* border: 1px solid aquamarine; */
     height: 10vh;
     width: 490px;
     text-align: center;
@@ -157,7 +154,6 @@ input::placeholder {
 }
 
 .result-container h2 {
-    /* border: 2px solid azure ; */
     margin-top: 50px;
     display: flex;
     align-items: center;
@@ -166,3 +162,34 @@ input::placeholder {
     height: 150px;
 }
    
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+        padding-bottom: 50px;
+    }
+    h1{
+        font-size: 32px;
+        text-align: center;
+    }
+    .command-container {
+        width: 99vw;
+
+    }
+    #result {
+        margin-top: -10vh;
+    }
+
+    .button-containers button {
+        width: 130px;
+        height: 50px;
+        font-size: 12px;
+        padding: 10px 10px;
+    }
+    .button-containers {
+        width: 93vw;
+    }
+    .reminder-container h2, li {
+        margin-left: 20px;
+    } 
+}

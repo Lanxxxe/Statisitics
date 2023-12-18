@@ -52,7 +52,7 @@ Range_Button.addEventListener('click', () => {
     const maximum = Math.max(...array);
     const minimum = Math.min(...array);
     let range = maximum - minimum;
-    show_Result.innerHTML = `Range: ${range}`;
+    show_Result.innerHTML = `Range = ${range}`;
 })
 
 
@@ -61,7 +61,7 @@ Inter_Quartile_Button.addEventListener('click', () => {
     let sorted_data = iqr_data.sort();
     let calculate_Position = calculatePercentilePositions(iqr_data);
     let iqr = sorted_data[calculate_Position.q3Position] - sorted_data[calculate_Position.q1Position];
-    show_Result.innerHTML = `IQR: ${iqr}`;
+    show_Result.innerHTML = `IQR = ${iqr}`;
     
 });
 
@@ -142,23 +142,22 @@ Sample_Standard_Deviation_Button.addEventListener('click', () => {
 })
 
 Coefficient_Variance_Button.addEventListener('click', () => {
-    let SD_Sample_computation_result = [];
-    let SD_Sample_Mean = get_mean(input);
-    let SD_Sample_Data = get_input(input);
-    let SD_Sample_Sorted_Data = SD_Sample_Data.sort();
+    let CV_computation_result = [];
+    let CV_Mean = get_mean(input);
+    let CV_Data = get_input(input);
+    let CV_Sorted_Data = CV_Data.sort();
     
-    for (let SD_Sample_index = 0 ; SD_Sample_index < SD_Sample_Sorted_Data.length ; SD_Sample_index++){
-        SD_Sample_computation_result.push((SD_Sample_Sorted_Data[SD_Sample_index] - SD_Sample_Mean) ** 2)
+    for (let CV_index = 0 ; CV_index < CV_Sorted_Data.length ; CV_index++){
+        CV_computation_result.push((CV_Sorted_Data[CV_index] - CV_Mean) ** 2)
     }
     
-    let Total_SD_Sample_Calculation = SD_Sample_computation_result.reduce((SD_Sample_count, SD_Sample_current_value) => SD_Sample_count + SD_Sample_current_value, 0);
+    let Total_CV_Calculation = CV_computation_result.reduce((CV_count, CV_current_value) => CV_count + CV_current_value, 0);
 
-    let SD_Sample_Result = Total_SD_Sample_Calculation / (SD_Sample_Data.length - 1);
-    
-    let coe = (SD_Sample_Result / SD_Sample_Mean) * 100
+    let CV_Result = Total_CV_Calculation / (CV_Data.length - 1);
 
-    show_Result.innerHTML = `Coefficient Variance ${coe.toFixed(2)}%`;
+    let CV_Coe = (Math.sqrt(CV_Result) / CV_Mean) * 100
 
+    show_Result.innerHTML = `Coefficient Variance = ${CV_Coe.toFixed(2)}`;
 })
 
 clear_Data.addEventListener('click', () =>{

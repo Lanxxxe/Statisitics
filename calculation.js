@@ -157,7 +157,7 @@ Coefficient_Variance_Button.addEventListener('click', () => {
 
     let CV_Coe = (Math.sqrt(CV_Result) / CV_Mean) * 100
 
-    show_Result.innerHTML = `Coefficient Variance = ${CV_Coe.toFixed(2)}`;
+    show_Result.innerHTML = `Coefficient Variance = ${CV_Coe.toFixed(2)}%`;
 })
 
 clear_Data.addEventListener('click', () =>{
